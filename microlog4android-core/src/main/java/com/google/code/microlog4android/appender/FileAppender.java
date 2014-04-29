@@ -154,6 +154,9 @@ public class FileAppender extends AbstractAppender {
     public void setFileName(String fileName) {
         // TODO Throw IllegalArgumentException if the filename is null.
         if (fileName != null) {
+            if (!fileName.equals(this.fileName)) {
+                mSdCardLogFile = null;
+            }
             this.fileName = fileName;
         }
     }
